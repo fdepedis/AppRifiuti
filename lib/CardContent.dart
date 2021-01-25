@@ -1,47 +1,67 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CardContent extends StatelessWidget {
-  final String name;
-  final String date;
+import 'detail_screen.dart';
 
-  const CardContent({Key key, @required this.name, @required this.date})
+// ignore: must_be_immutable
+class CardContent extends StatelessWidget {
+  static const double cardHeightLarge = 250;
+  static const double cardHeightNormal = 100;
+  static const double cardHeightSmall = 50;
+  double cardHeight;
+  final String nameCard;
+  final String typeCard;
+  final String dimensionCard;
+
+  CardContent(
+      {Key key,
+      @required this.nameCard,
+      @required this.typeCard,
+      @required this.dimensionCard})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Text(name, style: TextStyle(fontSize: 20)),
-          SizedBox(height: 8),
-          Text(date, style: TextStyle(color: Colors.grey)),
-          Spacer(),
-          Row(
-            children: <Widget>[
-              RaisedButton(
-                color: Color(0xFF162A49),
-                child: Text('Reserve'),
-                textColor: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(32),
-                ),
-                onPressed: () {},
+    if (dimensionCard == "LARGE") {
+      cardHeight = cardHeightLarge;
+    } else if (dimensionCard == "NORMAL") {
+      cardHeight = cardHeightNormal;
+    } else {
+      cardHeight = cardHeightSmall;
+    }
+    return Container(
+      height: cardHeight,
+      child: Card(
+        margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 25.0),
+        elevation: 4,
+        color: new Color(0xFF333366),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(25.0),
+        ),
+        child: InkWell(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetailScreen(),
               ),
-              Spacer(),
-              Text(
-                '0.00 \$',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ),
+            );
+          },
+          child: ListTile(
+            leading: Icon(
+              Icons.phone,
+              color: Colors.teal,
+            ),
+            title: Text(
+              '',
+              style: TextStyle(
+                color: Colors.teal.shade900,
+                fontFamily: 'Source Sans Pro',
+                fontSize: 20.0,
               ),
-              SizedBox(width: 16),
-            ],
-          )
-        ],
+            ),
+          ),
+        ),
       ),
     );
   }

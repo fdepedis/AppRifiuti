@@ -57,7 +57,8 @@ SafeArea _buildBody(BuildContext context) {
             thickness: 1,
           ),
         ),*/
-        calendarCard(context),
+        /*calendarCard(context),*/
+        CardContent(nameCard: "", typeCard: "", dimensionCard: "LARGE"),
         /*Card(
           margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
           elevation: 4,
@@ -118,8 +119,8 @@ SafeArea _buildBody(BuildContext context) {
             ),
           ),
         ),*/
-        typeCard(context),
-        contactCard(context),
+        CardContent(nameCard: "", typeCard: "", dimensionCard: "LARGE"),
+        CardContent(nameCard: "", typeCard: "", dimensionCard: "NORMAL"),
       ],
     ),
   );
@@ -182,121 +183,4 @@ SafeArea _buildBody(BuildContext context) {
       ),
     ),
   );*/
-}
-
-Container calendarCard(BuildContext context) {
-  return Container(
-    height: 250,
-    child: Card(
-      margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-      elevation: 4,
-      color: new Color(0xFF333366),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(25.0),
-      ),
-//padding: EdgeInsets.all(10.0),
-      child: InkWell(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => DetailScreen(),
-            ),
-          );
-        },
-        child: ListTile(
-          leading: Icon(
-            Icons.phone,
-            color: Colors.teal,
-          ),
-          title: Text(
-            '',
-            style: TextStyle(
-              color: Colors.teal.shade900,
-              fontFamily: 'Source Sans Pro',
-              fontSize: 20.0,
-            ),
-          ),
-        ),
-      ),
-    ),
-  );
-}
-
-Container typeCard(BuildContext context) {
-  return Container(
-    height: 250,
-    child: Card(
-      margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-      elevation: 4,
-      color: new Color(0xFF333366),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(25.0),
-      ),
-//padding: EdgeInsets.all(10.0),
-      child: InkWell(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => DetailScreen(),
-            ),
-          );
-        },
-        child: ListTile(
-          leading: Icon(
-            Icons.phone,
-            color: Colors.teal,
-          ),
-          title: Text(
-            '',
-            style: TextStyle(
-              color: Colors.teal.shade900,
-              fontFamily: 'Source Sans Pro',
-              fontSize: 20.0,
-            ),
-          ),
-        ),
-      ),
-    ),
-  );
-}
-
-Container contactCard(BuildContext context) {
-  return Container(
-    height: 50,
-    child: Card(
-      margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-      elevation: 4,
-      color: new Color(0xFF333366),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(25.0),
-      ),
-//padding: EdgeInsets.all(10.0),
-      child: InkWell(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => DetailScreen(),
-            ),
-          );
-        },
-        child: ListTile(
-          leading: Icon(
-            Icons.phone,
-            color: Colors.teal,
-          ),
-          title: Text(
-            '',
-            style: TextStyle(
-              color: Colors.teal.shade900,
-              fontFamily: 'Source Sans Pro',
-              fontSize: 20.0,
-            ),
-          ),
-        ),
-      ),
-    ),
-  );
 }
