@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'CardContent.dart';
 import 'detail_screen.dart';
 
 void main() {
+  SystemChrome.setEnabledSystemUIOverlays([]);
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(MyApp());
 }
 
@@ -11,9 +14,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'App Rifiuti Marina TSL',
+      debugShowCheckedModeBanner: false,
+      //title: 'App Rifiuti Marina TSL',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MyHomePage(title: 'Marina Tor S.Lorenzo'),
@@ -39,6 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
+      backgroundColor: Colors.white,
       body: _buildBody(context),
     );
   }
@@ -58,7 +63,11 @@ SafeArea _buildBody(BuildContext context) {
           ),
         ),*/
         /*calendarCard(context),*/
-        CardContent(nameCard: "", typeCard: "", dimensionCard: "LARGE"),
+        CardContent(
+            nameCard: "",
+            typeCard: "",
+            dimensionCard: "LARGE",
+            colorCard: 0xFF7C2289),
         /*Card(
           margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
           elevation: 4,
@@ -119,8 +128,16 @@ SafeArea _buildBody(BuildContext context) {
             ),
           ),
         ),*/
-        CardContent(nameCard: "", typeCard: "", dimensionCard: "LARGE"),
-        CardContent(nameCard: "", typeCard: "", dimensionCard: "NORMAL"),
+        CardContent(
+            nameCard: "",
+            typeCard: "",
+            dimensionCard: "LARGE",
+            colorCard: 0xFFF48731),
+        CardContent(
+            nameCard: "",
+            typeCard: "",
+            dimensionCard: "NORMAL",
+            colorCard: 0xFFFFB849),
       ],
     ),
   );

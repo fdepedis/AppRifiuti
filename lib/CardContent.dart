@@ -12,12 +12,14 @@ class CardContent extends StatelessWidget {
   final String nameCard;
   final String typeCard;
   final String dimensionCard;
+  final int colorCard;
 
   CardContent(
       {Key key,
       @required this.nameCard,
       @required this.typeCard,
-      @required this.dimensionCard})
+      @required this.dimensionCard,
+      @required this.colorCard})
       : super(key: key);
 
   @override
@@ -32,11 +34,11 @@ class CardContent extends StatelessWidget {
     return Container(
       height: cardHeight,
       child: Card(
-        margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 25.0),
+        margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 25.0),
         elevation: 4,
-        color: new Color(0xFF333366),
+        color: new Color(colorCard),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(25.0),
+          borderRadius: BorderRadius.circular(20.0),
         ),
         child: InkWell(
           onTap: () {
@@ -63,6 +65,20 @@ class CardContent extends StatelessWidget {
           ),
         ),
       ),
+      /*decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(25),
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end:
+              Alignment(0.8, 0.0), // 10% of the width, so there are ten blinds.
+          colors: [
+            Color(0xF25FFFFF),
+            Color(0xFF2508FF),
+            Color(0xFF2508FF),
+          ], // whitish to gray
+          tileMode: TileMode.repeated, // repeats the gradient over the canvas
+        ),
+      ),*/
     );
   }
 }
