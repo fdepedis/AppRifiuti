@@ -55,11 +55,11 @@ class CardContent extends StatelessWidget {
               color: Colors.teal,
             ),
             title: Text(
-              '',
+              nameCard,
               style: TextStyle(
-                color: Colors.teal.shade900,
+                color: Colors.white70,
                 fontFamily: 'Source Sans Pro',
-                fontSize: 20.0,
+                fontSize: 26.0,
               ),
             ),
           ),

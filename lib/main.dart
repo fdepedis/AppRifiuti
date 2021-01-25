@@ -17,7 +17,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       //title: 'App Rifiuti Marina TSL',
       theme: ThemeData(
-        primarySwatch: Colors.red,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MyHomePage(title: 'Marina Tor S.Lorenzo'),
@@ -41,7 +40,16 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        /* title: Text(widget.title),*/
+        backgroundColor: Colors.red[300],
+        title: Text(
+          widget.title,
+          style: TextStyle(
+            color: Colors.white,
+            fontFamily: 'Pacifico',
+            fontSize: 20,
+          ),
+        ),
       ),
       backgroundColor: Colors.white,
       body: _buildBody(context),
@@ -54,18 +62,9 @@ SafeArea _buildBody(BuildContext context) {
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        /*SizedBox(
-          height: 20.0,
-          width: 150.0,
-          child: Divider(
-            color: Colors.teal.shade100,
-            thickness: 1,
-          ),
-        ),*/
-        /*calendarCard(context),*/
         CardContent(
-            nameCard: "",
-            typeCard: "",
+            nameCard: "Calendario Rifiuti",
+            typeCard: "R_CALENDAR",
             dimensionCard: "LARGE",
             colorCard: 0xFF7C2289),
         /*Card(
@@ -129,13 +128,13 @@ SafeArea _buildBody(BuildContext context) {
           ),
         ),*/
         CardContent(
-            nameCard: "",
-            typeCard: "",
+            nameCard: "Tipo Rifiuti",
+            typeCard: "R_TYPE",
             dimensionCard: "LARGE",
             colorCard: 0xFFF48731),
         CardContent(
-            nameCard: "",
-            typeCard: "",
+            nameCard: "Prenotazione Rifiuti",
+            typeCard: "R_CHECK",
             dimensionCard: "NORMAL",
             colorCard: 0xFFFFB849),
       ],
