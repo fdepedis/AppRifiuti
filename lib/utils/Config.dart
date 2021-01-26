@@ -2,9 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Config extends StatelessWidget {
-  static const double cardHeightLarge = 230;
-  static const double cardHeightNormal = 150;
-  static const double cardHeightSmall = 100;
+  static const double cardHeightLarge = 240;
+  static const double cardHeightNormal = 180;
+  static const double cardHeightSmall = 120;
+  static const double cardHeightDefault = 200;
 
   @override
   Widget build(BuildContext context) {

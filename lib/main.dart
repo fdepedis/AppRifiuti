@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_micard/utils/Utils.dart';
 import 'CardContent.dart';
 import 'route/detail_screen.dart';
 
@@ -58,25 +59,37 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
+enum cardDimension { LARGE, NORMAL, SMALL }
+
+extension ParseToString on cardDimension {
+  String toShortString() {
+    return this.toString().split('.').last;
+  }
+}
+
 SafeArea _buildBody(BuildContext context) {
   return SafeArea(
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         CardContent(
-            nameCard: "Calendario Rifiuti",
+            titleCard: "Calendario Rifiuti",
+            subTitleCard:
+                "Verifica il calenderio settimanale per la corretta differenziata",
             typeCard: "R_CALENDAR",
-            dimensionCard: "LARGE",
+            dimensionCard: cardDimension.LARGE.toShortString(),
             colorCard: 0xFF7C2289),
         CardContent(
-            nameCard: "Tipo Rifiuti",
+            titleCard: "Rifiuti Speciali",
+            subTitleCard: "Verifica e differenzia i rifiuti speciali",
             typeCard: "R_TYPE",
-            dimensionCard: "NORMAL",
+            dimensionCard: cardDimension.NORMAL.toShortString(),
             colorCard: 0xFFF48731),
         CardContent(
-            nameCard: "Prenotazione Rifiuti",
+            titleCard: "Prenotazione Rifiuti",
+            subTitleCard: "Prenota un ritiro per i rifiuti ingombranti",
             typeCard: "R_CHECK",
-            dimensionCard: "NORMAL",
+            dimensionCard: cardDimension.SMALL.toShortString(),
             colorCard: 0xFFFFB849),
       ],
     ),

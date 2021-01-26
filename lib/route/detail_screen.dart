@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 class DetailScreen extends StatelessWidget {
   final int index;
-  final String nameCard;
+  final String titleCard;
 
-  DetailScreen({Key key, @required this.index, @required this.nameCard})
+  DetailScreen({Key key, @required this.index, @required this.titleCard})
       : super(key: key);
 
   @override
@@ -14,7 +14,7 @@ class DetailScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.red[300],
         title: Text(
-          nameCard,
+          titleCard,
           style: TextStyle(
             color: Colors.white,
             fontFamily: 'Pacifico',

@@ -1,20 +1,24 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_micard/utils/Config.dart';
+import 'package:flutter_micard/utils/Utils.dart';
 
 import 'route/detail_screen.dart';
 
 // ignore: must_be_immutable
 class CardContent extends StatelessWidget {
-  double cardHeight;
-  final String nameCard;
+  static double cardHeight;
+  final String titleCard;
+  final String subTitleCard;
   final String typeCard;
   final String dimensionCard;
   final int colorCard;
+  static Icon iconCard;
 
   CardContent(
       {Key key,
-      @required this.nameCard,
+      @required this.titleCard,
+      @required this.subTitleCard,
       @required this.typeCard,
       @required this.dimensionCard,
       @required this.colorCard})
@@ -22,13 +26,9 @@ class CardContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (dimensionCard == "LARGE") {
-      cardHeight = Config.cardHeightLarge;
-    } else if (dimensionCard == "NORMAL") {
-      cardHeight = Config.cardHeightNormal;
-    } else {
-      cardHeight = Config.cardHeightSmall;
-    }
+    cardHeight = Utils.getHeightCard(dimensionCard);
+    iconCard = Utils.getIconCard(typeCard);
+
     return Container(
       height: cardHeight,
       child: Card(
@@ -44,7 +44,7 @@ class CardContent extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) =>
-                    DetailScreen(index: null, nameCard: nameCard),
+                    DetailScreen(index: null, titleCard: titleCard),
               ),
             );
           },
@@ -53,17 +53,19 @@ class CardContent extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 ListTile(
-                  leading: Icon(Icons.album, size: 70),
+                  leading: iconCard,
+                  /*Icon(Icons.album, size: 70),*/
                   title: Text(
-                    nameCard,
+                    titleCard,
                     style: TextStyle(
                       color: Colors.white70,
                       fontFamily: 'Source Sans Pro',
+                      fontWeight: FontWeight.bold,
                       fontSize: 26.0,
                     ),
                   ),
                   subtitle: Text(
-                    'Dev',
+                    subTitleCard,
                     style: TextStyle(
                         color: Colors.white70,
                         fontFamily: 'Source Sans Pro',
