@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'CardContent.dart';
-import 'detail_screen.dart';
+import 'package:flutter/services.dart';
+import 'card_content.dart';
 
 void main() {
+  SystemChrome.setEnabledSystemUIOverlays([]);
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(MyApp());
 }
 
@@ -11,12 +13,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'App Rifiuti Marina TSL',
+      debugShowCheckedModeBanner: false,
+      //title: 'App Rifiuti Marina TSL',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Marina Tor S.Lorenzo'),
+      home: MyHomePage(title: 'App Rifiuti - Marina di Tor S.Lorenzo'),
     );
   }
 }
@@ -37,91 +39,64 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        /* title: Text(widget.title),*/
+        backgroundColor: Colors.teal,
+        title: Text(
+          widget.title,
+          style: TextStyle(
+            color: Colors.white,
+            fontFamily: 'Pacifico',
+            fontSize: 20,
+          ),
+        ),
+        centerTitle: true,
       ),
+      backgroundColor: Colors.white,
       body: _buildBody(context),
     );
   }
 }
 
-SafeArea _buildBody(BuildContext context) {
-  return SafeArea(
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        /*SizedBox(
-          height: 20.0,
-          width: 150.0,
-          child: Divider(
-            color: Colors.teal.shade100,
-            thickness: 1,
-          ),
-        ),*/
-        calendarCard(context),
-        /*Card(
-          margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-          elevation: 4,
-          //color: Colors.white,
-          //padding: EdgeInsets.all(10.0),
-          child: InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => DetailScreen(),
-                ),
-              );
-            },
-            child: ListTile(
-              leading: Icon(
-                Icons.phone,
-                color: Colors.teal,
-              ),
-              title: Text(
-                '',
-                style: TextStyle(
-                  color: Colors.teal.shade900,
-                  fontFamily: 'Source Sans Pro',
-                  fontSize: 20.0,
-                ),
-              ),
-            ),
-          ),
-        ),*/
-        /*Card(
-          margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-          elevation: 4,
-          child: InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => DetailScreen(),
-                ),
-              );
-            },
-            //color: Colors.white,
-            //padding: EdgeInsets.all(10.0),
-            child: ListTile(
-              leading: Icon(
-                Icons.email,
-                color: Colors.teal,
-              ),
-              title: Text(
-                '',
-                style: TextStyle(
-                  color: Colors.teal.shade900,
-                  fontFamily: 'Source Sans Pro',
-                  fontSize: 20.0,
-                ),
-              ),
-            ),
-          ),
-        ),*/
-        typeCard(context),
-        contactCard(context),
-      ],
-    ),
+enum cardDimension { LARGE, NORMAL, SMALL }
+
+extension ParseToString on cardDimension {
+  String toShortString() {
+    return this.toString().split('.').last;
+  }
+}
+
+ListView _buildBody(BuildContext context) {
+  return ListView(
+    shrinkWrap: true,
+    children: <Widget>[
+      Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          CardContent(
+              titleCard: "Calendario Rifiuti",
+              subTitleCard:
+                  "Verifica il calenderio settimanale per la corretta differenziata",
+              typeCard: "R_CALENDAR",
+              dimensionCard: cardDimension.LARGE.toShortString(),
+              colorCard: 0xFF7C2289),
+          CardContent(
+              titleCard: "Rifiuti Speciali",
+              subTitleCard: "Verifica e differenzia i rifiuti speciali",
+              typeCard: "R_TYPE",
+              dimensionCard: cardDimension.NORMAL.toShortString(),
+              colorCard: 0xFFF48731),
+          CardContent(
+              titleCard: "Prenotazione Rifiuti",
+              subTitleCard: "Prenota un ritiro per i rifiuti ingombranti",
+              typeCard: "R_CHECK",
+              dimensionCard: cardDimension.SMALL.toShortString(),
+              colorCard: 0xFFFFB849),
+          /**
+           * Here, if add new card, it's possible scroll to view correctly the card created
+           */
+        ],
+      ),
+    ],
   );
 
   /*SafeArea(
@@ -182,121 +157,4 @@ SafeArea _buildBody(BuildContext context) {
       ),
     ),
   );*/
-}
-
-Container calendarCard(BuildContext context) {
-  return Container(
-    height: 250,
-    child: Card(
-      margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-      elevation: 4,
-      color: new Color(0xFF333366),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(25.0),
-      ),
-//padding: EdgeInsets.all(10.0),
-      child: InkWell(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => DetailScreen(),
-            ),
-          );
-        },
-        child: ListTile(
-          leading: Icon(
-            Icons.phone,
-            color: Colors.teal,
-          ),
-          title: Text(
-            '',
-            style: TextStyle(
-              color: Colors.teal.shade900,
-              fontFamily: 'Source Sans Pro',
-              fontSize: 20.0,
-            ),
-          ),
-        ),
-      ),
-    ),
-  );
-}
-
-Container typeCard(BuildContext context) {
-  return Container(
-    height: 250,
-    child: Card(
-      margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-      elevation: 4,
-      color: new Color(0xFF333366),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(25.0),
-      ),
-//padding: EdgeInsets.all(10.0),
-      child: InkWell(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => DetailScreen(),
-            ),
-          );
-        },
-        child: ListTile(
-          leading: Icon(
-            Icons.phone,
-            color: Colors.teal,
-          ),
-          title: Text(
-            '',
-            style: TextStyle(
-              color: Colors.teal.shade900,
-              fontFamily: 'Source Sans Pro',
-              fontSize: 20.0,
-            ),
-          ),
-        ),
-      ),
-    ),
-  );
-}
-
-Container contactCard(BuildContext context) {
-  return Container(
-    height: 50,
-    child: Card(
-      margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-      elevation: 4,
-      color: new Color(0xFF333366),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(25.0),
-      ),
-//padding: EdgeInsets.all(10.0),
-      child: InkWell(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => DetailScreen(),
-            ),
-          );
-        },
-        child: ListTile(
-          leading: Icon(
-            Icons.phone,
-            color: Colors.teal,
-          ),
-          title: Text(
-            '',
-            style: TextStyle(
-              color: Colors.teal.shade900,
-              fontFamily: 'Source Sans Pro',
-              fontSize: 20.0,
-            ),
-          ),
-        ),
-      ),
-    ),
-  );
 }
