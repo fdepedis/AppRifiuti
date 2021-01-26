@@ -67,32 +67,38 @@ extension ParseToString on cardDimension {
   }
 }
 
-SafeArea _buildBody(BuildContext context) {
-  return SafeArea(
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        CardContent(
-            titleCard: "Calendario Rifiuti",
-            subTitleCard:
-                "Verifica il calenderio settimanale per la corretta differenziata",
-            typeCard: "R_CALENDAR",
-            dimensionCard: cardDimension.LARGE.toShortString(),
-            colorCard: 0xFF7C2289),
-        CardContent(
-            titleCard: "Rifiuti Speciali",
-            subTitleCard: "Verifica e differenzia i rifiuti speciali",
-            typeCard: "R_TYPE",
-            dimensionCard: cardDimension.NORMAL.toShortString(),
-            colorCard: 0xFFF48731),
-        CardContent(
-            titleCard: "Prenotazione Rifiuti",
-            subTitleCard: "Prenota un ritiro per i rifiuti ingombranti",
-            typeCard: "R_CHECK",
-            dimensionCard: cardDimension.SMALL.toShortString(),
-            colorCard: 0xFFFFB849),
-      ],
-    ),
+ListView _buildBody(BuildContext context) {
+  return ListView(
+    shrinkWrap: true,
+    children: <Widget>[
+      Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          CardContent(
+              titleCard: "Calendario Rifiuti",
+              subTitleCard:
+                  "Verifica il calenderio settimanale per la corretta differenziata",
+              typeCard: "R_CALENDAR",
+              dimensionCard: cardDimension.LARGE.toShortString(),
+              colorCard: 0xFF7C2289),
+          CardContent(
+              titleCard: "Rifiuti Speciali",
+              subTitleCard: "Verifica e differenzia i rifiuti speciali",
+              typeCard: "R_TYPE",
+              dimensionCard: cardDimension.NORMAL.toShortString(),
+              colorCard: 0xFFF48731),
+          CardContent(
+              titleCard: "Prenotazione Rifiuti",
+              subTitleCard: "Prenota un ritiro per i rifiuti ingombranti",
+              typeCard: "R_CHECK",
+              dimensionCard: cardDimension.SMALL.toShortString(),
+              colorCard: 0xFFFFB849),
+          /**
+           * Here, if add new card, it's possible scroll to view correctly the card created
+           */
+        ],
+      ),
+    ],
   );
 
   /*SafeArea(
