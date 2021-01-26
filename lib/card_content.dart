@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_micard/utils/Config.dart';
-import 'package:flutter_micard/utils/Utils.dart';
+import 'utils/utils.dart';
 
 import 'route/detail_screen.dart';
 

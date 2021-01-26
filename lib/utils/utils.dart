@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:frino_icons/frino_icons.dart';
 
-import 'Config.dart';
+import 'config.dart';
 
 class Utils extends StatelessWidget {
   static int colorCard;
