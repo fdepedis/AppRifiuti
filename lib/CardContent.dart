@@ -38,57 +38,43 @@ class CardContent extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20.0),
         ),
-        /*child: InkWell(
+        child: InkWell(
           onTap: () {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => DetailScreen(),
+                builder: (context) =>
+                    DetailScreen(index: null, nameCard: nameCard),
               ),
             );
           },
-          child: ListTile(
-            */ /*leading: Icon(
-              Icons.phone,
-              color: Colors.teal,
-            ),*/ /*
-            title: Text(
-              nameCard,
-              style: TextStyle(
-                color: Colors.white70,
-                fontFamily: 'Source Sans Pro',
-                fontSize: 26.0,
-              ),
+          child: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                ListTile(
+                  leading: Icon(Icons.album, size: 70),
+                  title: Text(
+                    nameCard,
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontFamily: 'Source Sans Pro',
+                      fontSize: 26.0,
+                    ),
+                  ),
+                  subtitle: Text(
+                    'Dev',
+                    style: TextStyle(
+                        color: Colors.white70,
+                        fontFamily: 'Source Sans Pro',
+                        fontSize: 22.0),
+                  ),
+                ),
+              ],
             ),
-          ),
-        ),*/
-        child: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              const ListTile(
-                leading: Icon(Icons.album, size: 70),
-                title: Text('Flutter ', style: TextStyle(color: Colors.white)),
-                subtitle: Text('Dev', style: TextStyle(color: Colors.white)),
-              ),
-            ],
           ),
         ),
       ),
-      /*decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(25),
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end:
-              Alignment(0.8, 0.0), // 10% of the width, so there are ten blinds.
-          colors: [
-            Color(0xF25FFFFF),
-            Color(0xFF2508FF),
-            Color(0xFF2508FF),
-          ], // whitish to gray
-          tileMode: TileMode.repeated, // repeats the gradient over the canvas
-        ),
-      ),*/
     );
   }
 }

@@ -68,70 +68,10 @@ SafeArea _buildBody(BuildContext context) {
             typeCard: "R_CALENDAR",
             dimensionCard: "LARGE",
             colorCard: 0xFF7C2289),
-        /*Card(
-          margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-          elevation: 4,
-          //color: Colors.white,
-          //padding: EdgeInsets.all(10.0),
-          child: InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => DetailScreen(),
-                ),
-              );
-            },
-            child: ListTile(
-              leading: Icon(
-                Icons.phone,
-                color: Colors.teal,
-              ),
-              title: Text(
-                '',
-                style: TextStyle(
-                  color: Colors.teal.shade900,
-                  fontFamily: 'Source Sans Pro',
-                  fontSize: 20.0,
-                ),
-              ),
-            ),
-          ),
-        ),*/
-        /*Card(
-          margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-          elevation: 4,
-          child: InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => DetailScreen(),
-                ),
-              );
-            },
-            //color: Colors.white,
-            //padding: EdgeInsets.all(10.0),
-            child: ListTile(
-              leading: Icon(
-                Icons.email,
-                color: Colors.teal,
-              ),
-              title: Text(
-                '',
-                style: TextStyle(
-                  color: Colors.teal.shade900,
-                  fontFamily: 'Source Sans Pro',
-                  fontSize: 20.0,
-                ),
-              ),
-            ),
-          ),
-        ),*/
         CardContent(
             nameCard: "Tipo Rifiuti",
             typeCard: "R_TYPE",
-            dimensionCard: "LARGE",
+            dimensionCard: "NORMAL",
             colorCard: 0xFFF48731),
         CardContent(
             nameCard: "Prenotazione Rifiuti",

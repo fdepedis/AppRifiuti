@@ -3,31 +3,40 @@ import 'package:flutter/material.dart';
 
 class DetailScreen extends StatelessWidget {
   final int index;
+  final String nameCard;
 
-  DetailScreen({Key key, @required this.index}) : super(key: key);
+  DetailScreen({Key key, @required this.index, @required this.nameCard})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Dettaglio Rifiuti"),
-      ),
-      body: ListView(children: <Widget>[
-        Expanded(
-          child: Container(
-            width: 500,
-            height: 240,
-            decoration: BoxDecoration(
-              image:
-                  DecorationImage(image: NetworkImage(""), fit: BoxFit.cover),
-            ),
+        backgroundColor: Colors.red[300],
+        title: Text(
+          nameCard,
+          style: TextStyle(
+            color: Colors.white,
+            fontFamily: 'Pacifico',
+            fontSize: 20,
           ),
         ),
-        /*Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Text(popular.results[index].overview),
-      ),*/
-      ]),
+        centerTitle: true,
+      ),
+      body: ListView(
+        children: <Widget>[
+          Expanded(
+            child: Container(
+              width: 500,
+              height: 240,
+              decoration: BoxDecoration(
+                image:
+                    DecorationImage(image: NetworkImage(""), fit: BoxFit.cover),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
