@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         /* title: Text(widget.title),*/
-        backgroundColor: Colors.red[300],
+        backgroundColor: Colors.teal,
         title: Text(
           widget.title,
           style: TextStyle(
