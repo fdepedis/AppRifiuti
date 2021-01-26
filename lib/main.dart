@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Marina Tor S.Lorenzo'),
+      home: MyHomePage(title: 'App Rifiuti - Marina di Tor S.Lorenzo'),
     );
   }
 }
@@ -50,6 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
             fontSize: 20,
           ),
         ),
+        centerTitle: true,
       ),
       backgroundColor: Colors.white,
       body: _buildBody(context),

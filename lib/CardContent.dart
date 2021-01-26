@@ -50,10 +50,10 @@ class CardContent extends StatelessWidget {
             );
           },
           child: ListTile(
-            leading: Icon(
+            /*leading: Icon(
               Icons.phone,
               color: Colors.teal,
-            ),
+            ),*/
             title: Text(
               nameCard,
               style: TextStyle(
