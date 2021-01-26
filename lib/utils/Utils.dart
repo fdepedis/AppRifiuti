@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:frino_icons/frino_icons.dart';
 
 import 'Config.dart';
 
@@ -44,20 +45,22 @@ class Utils extends StatelessWidget {
     switch (typeCard) {
       case "R_CALENDAR":
         {
-          iconCard = Icon(Icons.calendar_today_rounded,
-              color: Colors.white70, size: 70);
+          iconCard =
+              Icon(FrinoIcons.f_calendar, color: Colors.white70, size: 70);
         }
         break;
 
       case "R_TYPE":
         {
-          iconCard = Icon(Icons.phone, color: Colors.white70, size: 70);
+          iconCard =
+              Icon(FrinoIcons.f_recycling, color: Colors.white70, size: 70);
         }
         break;
 
       case "R_CHECK":
         {
-          iconCard = Icon(Icons.phone, color: Colors.white70, size: 70);
+          iconCard =
+              Icon(FrinoIcons.f_phone_classic, color: Colors.white70, size: 70);
         }
         break;
 
