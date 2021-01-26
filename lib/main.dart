@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'CardContent.dart';
-import 'detail_screen.dart';
+import 'route/detail_screen.dart';
 
 void main() {
   SystemChrome.setEnabledSystemUIOverlays([]);
