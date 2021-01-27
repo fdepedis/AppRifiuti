@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'utils/utils.dart';
+import '../utils/utils.dart';
 
-import 'route/detail_screen.dart';
+import 'detail_screen.dart';
 
 // ignore: must_be_immutable
 class CardContent extends StatelessWidget {
