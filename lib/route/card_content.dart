@@ -1,18 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../utils/utils.dart';
+import 'package:ardea_rifiuti/utils/utils.dart';
 
 import 'detail_screen.dart';
 
-// ignore: must_be_immutable
 class CardContent extends StatelessWidget {
   static double cardHeight;
+  static Icon iconCard;
+  static int indexDetailScreen;
+
   final String titleCard;
   final String subTitleCard;
   final String typeCard;
   final String dimensionCard;
   final int colorCard;
-  static Icon iconCard;
 
   CardContent(
       {Key key,
@@ -27,6 +28,7 @@ class CardContent extends StatelessWidget {
   Widget build(BuildContext context) {
     cardHeight = Utils.getHeightCard(dimensionCard);
     iconCard = Utils.getIconCard(typeCard);
+    indexDetailScreen = Utils.getIndexDetailScreen(typeCard);
 
     return Container(
       height: cardHeight,
@@ -42,8 +44,8 @@ class CardContent extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) =>
-                    DetailScreen(index: null, titleCard: titleCard),
+                builder: (context) => DetailScreen(
+                    index: indexDetailScreen, titleCard: titleCard),
               ),
             );
           },
