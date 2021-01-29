@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'card_content.dart';
+import '../utils/utils.dart';
+import '../content/card_content.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key, this.title}) : super(key: key);
@@ -38,7 +39,15 @@ class _HomeScreenState extends State<HomeScreen> {
 
 enum cardDimension { LARGE, NORMAL, SMALL }
 
-extension ParseToString on cardDimension {
+extension ParseToStringCard on cardDimension {
+  String toShortString() {
+    return this.toString().split('.').last;
+  }
+}
+
+enum typeDimension { R_CALENDAR, R_TYPE, R_CHECK }
+
+extension ParseToStringType on typeDimension {
   String toShortString() {
     return this.toString().split('.').last;
   }
@@ -52,24 +61,33 @@ ListView _buildBody(BuildContext context) {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           CardContent(
-              titleCard: "Calendario Rifiuti",
-              subTitleCard:
-                  "Verifica il calenderio settimanale per la corretta differenziata",
-              typeCard: "R_CALENDAR",
-              dimensionCard: cardDimension.LARGE.toShortString(),
-              colorCard: 0xFF7C2289),
+            titleCard: "Calendario Rifiuti",
+            subTitleCard:
+                "Verifica il calenderio settimanale per la corretta differenziata",
+            typeCard: "R_CALENDAR",
+            dimensionCard: cardDimension.LARGE.toShortString(),
+            colorCard: 0xFF7C2289,
+            index: Utils.getIndexDetailScreen(
+                typeDimension.R_CALENDAR.toShortString()),
+          ),
           CardContent(
-              titleCard: "Rifiuti Speciali",
-              subTitleCard: "Verifica e differenzia i rifiuti speciali",
-              typeCard: "R_TYPE",
-              dimensionCard: cardDimension.NORMAL.toShortString(),
-              colorCard: 0xFFF48731),
+            titleCard: "Rifiuti Speciali",
+            subTitleCard: "Verifica e differenzia i rifiuti speciali",
+            typeCard: "R_TYPE",
+            dimensionCard: cardDimension.NORMAL.toShortString(),
+            colorCard: 0xFFF48731,
+            index: Utils.getIndexDetailScreen(
+                typeDimension.R_TYPE.toShortString()),
+          ),
           CardContent(
-              titleCard: "Prenotazione Rifiuti",
-              subTitleCard: "Prenota un ritiro per i rifiuti ingombranti",
-              typeCard: "R_CHECK",
-              dimensionCard: cardDimension.SMALL.toShortString(),
-              colorCard: 0xFFFFB849),
+            titleCard: "Prenotazione Rifiuti",
+            subTitleCard: "Prenota un ritiro per i rifiuti ingombranti",
+            typeCard: "R_CHECK",
+            dimensionCard: cardDimension.SMALL.toShortString(),
+            colorCard: 0xFFFFB849,
+            index: Utils.getIndexDetailScreen(
+                typeDimension.R_CHECK.toShortString()),
+          ),
           /**
            * Here, if add new card, it's possible scroll to view correctly the card created
            */

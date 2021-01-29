@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ardea_rifiuti/utils/utils.dart';
-
-import 'detail_screen.dart';
+import '../utils/utils.dart';
+import '../route/detail_screen.dart';
 
 class CardContent extends StatelessWidget {
   static double cardHeight;
@@ -14,6 +13,7 @@ class CardContent extends StatelessWidget {
   final String typeCard;
   final String dimensionCard;
   final int colorCard;
+  final int index;
 
   CardContent(
       {Key key,
@@ -21,14 +21,15 @@ class CardContent extends StatelessWidget {
       @required this.subTitleCard,
       @required this.typeCard,
       @required this.dimensionCard,
-      @required this.colorCard})
+      @required this.colorCard,
+      @required this.index})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     cardHeight = Utils.getHeightCard(dimensionCard);
     iconCard = Utils.getIconCard(typeCard);
-    indexDetailScreen = Utils.getIndexDetailScreen(typeCard);
+    /*indexDetailScreen = Utils.getIndexDetailScreen(typeCard);*/
 
     return Container(
       height: cardHeight,
@@ -44,8 +45,8 @@ class CardContent extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => DetailScreen(
-                    index: indexDetailScreen, titleCard: titleCard),
+                builder: (context) =>
+                    DetailScreen(index: index, titleCard: titleCard),
               ),
             );
           },

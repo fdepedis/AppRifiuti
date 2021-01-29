@@ -1,12 +1,15 @@
+import 'package:ardea_rifiuti/content/detail_content.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DetailScreen extends StatelessWidget {
-  final int index;
   final String titleCard;
+  final int index;
 
   DetailScreen({Key key, @required this.index, @required this.titleCard})
       : super(key: key);
+
+/*  this.index = index;*/
 
   @override
   Widget build(BuildContext context) {
@@ -23,20 +26,7 @@ class DetailScreen extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: ListView(
-        children: <Widget>[
-          Expanded(
-            child: Container(
-              width: 500,
-              height: 240,
-              decoration: BoxDecoration(
-                image:
-                    DecorationImage(image: NetworkImage(""), fit: BoxFit.cover),
-              ),
-            ),
-          ),
-        ],
-      ),
+      body: DetailContent(index: index),
     );
   }
 }
