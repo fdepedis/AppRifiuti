@@ -29,7 +29,6 @@ class CardContent extends StatelessWidget {
   Widget build(BuildContext context) {
     cardHeight = Utils.getHeightCard(dimensionCard);
     iconCard = Utils.getIconCard(typeCard);
-    /*indexDetailScreen = Utils.getIndexDetailScreen(typeCard);*/
 
     return Container(
       height: cardHeight,
