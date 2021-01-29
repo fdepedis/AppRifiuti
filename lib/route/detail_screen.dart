@@ -9,8 +9,6 @@ class DetailScreen extends StatelessWidget {
   DetailScreen({Key key, @required this.index, @required this.titleCard})
       : super(key: key);
 
-/*  this.index = index;*/
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
