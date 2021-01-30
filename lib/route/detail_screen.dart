@@ -69,6 +69,10 @@ class RadialExpansionDemo extends StatelessWidget {
   static const opacityCurve =
       const Interval(0.0, 0.75, curve: Curves.fastOutSlowIn);
 
+  final String titleCard;
+
+  RadialExpansionDemo({Key key, @required this.titleCard}) : super(key: key);
+
   static RectTween _createRectTween(Rect begin, Rect end) {
     return MaterialRectCenterArcTween(begin: begin, end: end);
   }
@@ -153,11 +157,11 @@ class RadialExpansionDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    timeDilation = 3.0; // 1.0 is normal animation speed.
+    timeDilation = 2.5; // 1.0 is normal animation speed.
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Radial Transition Demo'),
+        title: Text(titleCard),
       ),
       body: Container(
         padding: const EdgeInsets.all(22.0),
@@ -181,8 +185,12 @@ class RadialExpansionDemo extends StatelessWidget {
 }
 
 class DetailScreen extends StatelessWidget {
+  final String titleCard;
+
+  DetailScreen({Key key, @required this.titleCard}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return RadialExpansionDemo();
+    return RadialExpansionDemo(titleCard: titleCard);
   }
 }

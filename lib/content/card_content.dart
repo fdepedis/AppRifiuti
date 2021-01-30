@@ -47,7 +47,7 @@ class CardContent extends StatelessWidget {
               MaterialPageRoute(
                 builder: (context) =>
                     //DetailScreen(index: index, titleCard: titleCard),
-                    DetailScreen(),
+                    DetailScreen(titleCard: titleCard),
               ),
             );
           },
