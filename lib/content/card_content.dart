@@ -2,7 +2,7 @@ import 'package:ardea_rifiuti/route/detail_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../utils/utils.dart';
-import '../route/detail_screen_old.dart';
+import '../route/detail_screen.dart';
 
 class CardContent extends StatelessWidget {
   static double cardHeight;

@@ -180,7 +180,7 @@ class RadialExpansionDemo extends StatelessWidget {
   }
 }
 
-class DetailScreen2 extends StatelessWidget {
+class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RadialExpansionDemo();
