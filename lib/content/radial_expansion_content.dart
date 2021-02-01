@@ -181,21 +181,33 @@ class RadialExpansionContent extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: Container(
+      /* body: Container(
         padding: const EdgeInsets.all(22.0),
         alignment: FractionalOffset.bottomLeft,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            _buildHero(
-                context, 'images/AbitiDismessiR.png', Strings.abiti_dismessi),
-            _buildHero(context, 'images/IngombrantiR.png', Strings.ingombranti),
-            _buildHero(context, 'images/OliiVegetaliR.png', Strings.olii),
-            _buildHero(context, 'images/RaeeR.png', Strings.raee),
-            _buildHero(context, 'images/RupR.png', Strings.rup),
-            _buildHero(context, 'images/TonerR.png', Strings.toner),
-            _buildHero(context, 'images/VetroR.png', Strings.vetro),
-          ],
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,*/
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          child: GridView(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+                mainAxisSpacing: 3,
+                crossAxisSpacing: 3,
+                childAspectRatio: 1),
+            scrollDirection: Axis.vertical,
+            children: [
+              _buildHero(
+                  context, 'images/AbitiDismessiR.png', Strings.abiti_dismessi),
+              _buildHero(
+                  context, 'images/IngombrantiR.png', Strings.ingombranti),
+              _buildHero(context, 'images/OliiVegetaliR.png', Strings.olii),
+              _buildHero(context, 'images/RaeeR.png', Strings.raee),
+              _buildHero(context, 'images/RupR.png', Strings.rup),
+              _buildHero(context, 'images/TonerR.png', Strings.toner),
+              _buildHero(context, 'images/VetroR.png', Strings.vetro),
+            ],
+          ),
         ),
       ),
     );
