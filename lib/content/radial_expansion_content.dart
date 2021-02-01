@@ -181,11 +181,6 @@ class RadialExpansionContent extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      /* body: Container(
-        padding: const EdgeInsets.all(22.0),
-        alignment: FractionalOffset.bottomLeft,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,*/
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
