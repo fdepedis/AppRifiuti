@@ -1,3 +1,4 @@
+import 'package:ardea_rifiuti/utils/strings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../utils/utils.dart';
@@ -62,19 +63,18 @@ ListView _buildBody(BuildContext context) {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             CardContent(
-              titleCard: "Calendario Rifiuti",
-              subTitleCard:
-                  "Verifica il calenderio settimanale per la corretta differenziata",
+              titleCard: Strings.titleCardCalendar,
+              subTitleCard: Strings.subTitleCardCalendar,
               typeCard: "R_CALENDAR",
               dimensionCard: cardDimension.LARGE.toShortString(),
               colorCard: /*0xFF7C2289*/ /* Color(int.parse("FC4854", radix: 16) + 0xFF000000),*/
-                  Colors.red[600],
+                  Colors.red[300],
               index: Utils.getIndexDetailScreen(
                   typeDimension.R_CALENDAR.toShortString()),
             ),
             CardContent(
-              titleCard: "Rifiuti Speciali",
-              subTitleCard: "Verifica e differenzia i rifiuti speciali",
+              titleCard: Strings.titleCardType,
+              subTitleCard: Strings.subTitleCardType,
               typeCard: "R_TYPE",
               dimensionCard: cardDimension.NORMAL.toShortString(),
               colorCard: /*0xFFF48731*/ Colors.amber[800],
@@ -82,8 +82,8 @@ ListView _buildBody(BuildContext context) {
                   typeDimension.R_TYPE.toShortString()),
             ),
             CardContent(
-              titleCard: "Prenotazione Rifiuti",
-              subTitleCard: "Prenota un ritiro per i rifiuti ingombranti",
+              titleCard: Strings.titleCardCheck,
+              subTitleCard: Strings.subTitleCardCheck,
               typeCard: "R_CHECK",
               dimensionCard: cardDimension.SMALL.toShortString(),
               colorCard: /*0xFFFFB849*/ Colors.orange[300],

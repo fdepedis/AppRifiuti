@@ -1,6 +1,7 @@
 class Strings {
   static const String welcomeMessage = "Welcome To Flutter";
 
+  // Descrizione tipo rifiuti
   static const String ingombranti =
       "Mobili, armadi, poltrone, divani sedie, reti da letto, materassi, porte, finestre, tapparelle, sanitari, parti metalliche di grandi dimensioni o accoppiate ad altri materiali, pentolame, parti metalliche di grandi dimensioni, giocattoli di grandi dimensioni, vetri di grandi dimensioni, parti meccaniche.";
   static const String abiti_dismessi =
@@ -15,4 +16,15 @@ class Strings {
       "Toner, cartucce e flaconi [stampanti, fax, fotocopiatori].";
   static const String raee =
       "Frigoriferi, lavastoviglie, lavatrici, forni da cucina, forni a microonde, aspirapolveri, asciugacapelli, rasoi elettrici, TV, monitor, schermi LCD e plasma, Hi-Fi, telefoni cellulari, tablet, lettori musicali, walkman, computer, stampanti, fax, calcolatrici, macchine fotografiche, videocamere, videoregistratori, grandi elettrodomestici per la refrigerazione ed il condizionamento, apparecchi elettrici per il riscaldamento, giochi elettrici ed elettronici, componenti informatici, trapani, saldatori, seghe elettriche, macchine per cucire.";
+
+  // Descrizione Card
+  static const String titleCardCalendar = "Calendario Rifiuti";
+  static const String subTitleCardCalendar =
+      "Verifica il calenderio settimanale per la corretta differenziata";
+  static const String titleCardType = "Rifiuti Speciali";
+  static const String subTitleCardType =
+      "Verifica e differenzia i rifiuti speciali";
+  static const String titleCardCheck = "Prenotazione Rifiuti";
+  static const String subTitleCardCheck =
+      "Prenota un ritiro per i rifiuti ingombranti";
 }
