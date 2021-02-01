@@ -56,41 +56,45 @@ ListView _buildBody(BuildContext context) {
   return ListView(
     shrinkWrap: true,
     children: <Widget>[
-      Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          CardContent(
-            titleCard: "Calendario Rifiuti",
-            subTitleCard:
-                "Verifica il calenderio settimanale per la corretta differenziata",
-            typeCard: "R_CALENDAR",
-            dimensionCard: cardDimension.LARGE.toShortString(),
-            colorCard: 0xFF7C2289,
-            index: Utils.getIndexDetailScreen(
-                typeDimension.R_CALENDAR.toShortString()),
-          ),
-          CardContent(
-            titleCard: "Rifiuti Speciali",
-            subTitleCard: "Verifica e differenzia i rifiuti speciali",
-            typeCard: "R_TYPE",
-            dimensionCard: cardDimension.NORMAL.toShortString(),
-            colorCard: 0xFFF48731,
-            index: Utils.getIndexDetailScreen(
-                typeDimension.R_TYPE.toShortString()),
-          ),
-          CardContent(
-            titleCard: "Prenotazione Rifiuti",
-            subTitleCard: "Prenota un ritiro per i rifiuti ingombranti",
-            typeCard: "R_CHECK",
-            dimensionCard: cardDimension.SMALL.toShortString(),
-            colorCard: 0xFFFFB849,
-            index: Utils.getIndexDetailScreen(
-                typeDimension.R_CHECK.toShortString()),
-          ),
-          /**
-           * Here, if add new card, it's possible scroll to view correctly the card created
-           */
-        ],
+      Padding(
+        padding: const EdgeInsets.only(top: 10.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            CardContent(
+              titleCard: "Calendario Rifiuti",
+              subTitleCard:
+                  "Verifica il calenderio settimanale per la corretta differenziata",
+              typeCard: "R_CALENDAR",
+              dimensionCard: cardDimension.LARGE.toShortString(),
+              colorCard: /*0xFF7C2289*/ /* Color(int.parse("FC4854", radix: 16) + 0xFF000000),*/
+                  Colors.red[600],
+              index: Utils.getIndexDetailScreen(
+                  typeDimension.R_CALENDAR.toShortString()),
+            ),
+            CardContent(
+              titleCard: "Rifiuti Speciali",
+              subTitleCard: "Verifica e differenzia i rifiuti speciali",
+              typeCard: "R_TYPE",
+              dimensionCard: cardDimension.NORMAL.toShortString(),
+              colorCard: /*0xFFF48731*/ Colors.amber[800],
+              index: Utils.getIndexDetailScreen(
+                  typeDimension.R_TYPE.toShortString()),
+            ),
+            CardContent(
+              titleCard: "Prenotazione Rifiuti",
+              subTitleCard: "Prenota un ritiro per i rifiuti ingombranti",
+              typeCard: "R_CHECK",
+              dimensionCard: cardDimension.SMALL.toShortString(),
+              colorCard: /*0xFFFFB849*/ Colors.orange[300],
+              index: Utils.getIndexDetailScreen(
+                  typeDimension.R_CHECK.toShortString()),
+            ),
+            /**
+             * Here, if add new card, it's possible scroll to view correctly the card created
+             */
+          ],
+        ),
       ),
     ],
   );

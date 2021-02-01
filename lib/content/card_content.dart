@@ -13,7 +13,7 @@ class CardContent extends StatelessWidget {
   final String subTitleCard;
   final String typeCard;
   final String dimensionCard;
-  final int colorCard;
+  final Color colorCard;
   final int index;
 
   CardContent(
@@ -36,7 +36,7 @@ class CardContent extends StatelessWidget {
       child: Card(
         margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 25.0),
         elevation: 4,
-        color: new Color(colorCard),
+        color: colorCard,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20.0),
         ),
@@ -47,7 +47,7 @@ class CardContent extends StatelessWidget {
               MaterialPageRoute(
                 builder: (context) =>
                     DetailScreen(index: index, titleCard: titleCard),
-                    //DetailScreen(titleCard: titleCard),
+                //DetailScreen(titleCard: titleCard),
               ),
             );
           },
