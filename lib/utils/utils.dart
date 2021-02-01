@@ -8,6 +8,7 @@ class Utils extends StatelessWidget {
   static int colorCard;
   static double dimensionCard;
   static Icon iconCard;
+  static int indexDetailScreen;
 
   @override
   Widget build(BuildContext context) {
@@ -49,21 +50,18 @@ class Utils extends StatelessWidget {
               Icon(FrinoIcons.f_calendar, color: Colors.white70, size: 70);
         }
         break;
-
       case "R_TYPE":
         {
           iconCard =
               Icon(FrinoIcons.f_recycling, color: Colors.white70, size: 70);
         }
         break;
-
       case "R_CHECK":
         {
           iconCard =
               Icon(FrinoIcons.f_phone_classic, color: Colors.white70, size: 70);
         }
         break;
-
       default:
         {
           iconCard = Icon(Icons.album, color: Colors.red, size: 70);
@@ -71,5 +69,31 @@ class Utils extends StatelessWidget {
         break;
     }
     return iconCard;
+  }
+
+  static int getIndexDetailScreen(String typeCard) {
+    switch (typeCard) {
+      case "R_CALENDAR":
+        {
+          indexDetailScreen = 1;
+        }
+        break;
+      case "R_TYPE":
+        {
+          indexDetailScreen = 2;
+        }
+        break;
+      case "R_CHECK":
+        {
+          indexDetailScreen = 3;
+        }
+        break;
+      default:
+        {
+          indexDetailScreen = 0;
+        }
+        break;
+    }
+    return indexDetailScreen;
   }
 }

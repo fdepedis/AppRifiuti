@@ -1,5 +1,5 @@
-name: flutter_micard
-description: A new Flutter application.
+name: ardea_rifiuti
+description: App Rifiuti Marina di Tor San Lorenzo.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -14,6 +14,7 @@ dependencies:
   flutter:
     sdk: flutter
   frino_icons: ^1.0.1
+  auto_size_text: ^2.1.0
 
   cupertino_icons: ^0.1.3
 

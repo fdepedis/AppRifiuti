@@ -1,18 +1,20 @@
+import 'package:ardea_rifiuti/route/detail_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'utils/utils.dart';
+import '../utils/utils.dart';
+import '../route/detail_screen.dart';
 
-import 'route/detail_screen.dart';
-
-// ignore: must_be_immutable
 class CardContent extends StatelessWidget {
   static double cardHeight;
+  static Icon iconCard;
+  static int indexDetailScreen;
+
   final String titleCard;
   final String subTitleCard;
   final String typeCard;
   final String dimensionCard;
   final int colorCard;
-  static Icon iconCard;
+  final int index;
 
   CardContent(
       {Key key,
@@ -20,7 +22,8 @@ class CardContent extends StatelessWidget {
       @required this.subTitleCard,
       @required this.typeCard,
       @required this.dimensionCard,
-      @required this.colorCard})
+      @required this.colorCard,
+      @required this.index})
       : super(key: key);
 
   @override
@@ -43,7 +46,8 @@ class CardContent extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) =>
-                    DetailScreen(index: null, titleCard: titleCard),
+                    DetailScreen(index: index, titleCard: titleCard),
+                    //DetailScreen(titleCard: titleCard),
               ),
             );
           },
