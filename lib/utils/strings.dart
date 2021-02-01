@@ -27,4 +27,14 @@ class Strings {
   static const String titleCardCheck = "Prenotazione Rifiuti";
   static const String subTitleCardCheck =
       "Prenota un ritiro per i rifiuti ingombranti";
+
+  // Prenotazione Card
+  static const String prenotazioneCard =
+      "Il ritiro degli INGOMBRANTI e dei RAEE [Rifiuti Apparecchiature Elettriche ed Elettroniche] avviene esclusivamente su prenotazione. Si possono conferire 3 unità per prenotazione. È possibile prenotare il ritiro chiamando il numero verde, attivo dal lunedì al venerdì, dalle ore 9.00 alle ore 13.00 o compilando il form dal sito www.differenzioardea.it. Il servizio ritiro ingombranti è completamente gratuito.";
+
+  // Numero verde
+  static const String numeroVerde = "Tel.: 800.644640";
+
+  // link web
+  static const String linkWeb = "www.differenzioardea.it";
 }

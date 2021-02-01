@@ -1,4 +1,5 @@
-import 'package:ardea_rifiuti/content/radial_expansion_content.dart';
+import 'package:ardea_rifiuti/content/prenotazioneR_content.dart';
+import 'package:ardea_rifiuti/content/typeR_content.dart';
 import 'package:ardea_rifiuti/content/to_do_content.dart';
 import 'package:flutter/material.dart';
 
@@ -14,19 +15,19 @@ class DetailScreen extends StatelessWidget {
     switch (index) {
       case 1:
         {
-          return ToDoScreen(titleCard: titleCard);
+          return ToDoContent(titleCard: titleCard);
         }
       case 2:
         {
-          return RadialExpansionContent(titleCard: titleCard);
+          return TypeRContent(titleCard: titleCard);
         }
       case 3:
         {
-          return ToDoScreen(titleCard: titleCard);
+          return PrenotazioneRContent(titleCard: titleCard);
         }
       default:
         {
-          return ToDoScreen();
+          return ToDoContent();
         }
         break;
     }

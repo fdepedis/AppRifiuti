@@ -66,7 +66,7 @@ class RadialExpansion extends StatelessWidget {
   }
 }
 
-class RadialExpansionContent extends StatelessWidget {
+class TypeRContent extends StatelessWidget {
   static const double kMinRadius = 42.0;
   static const double kMaxRadius = 128.0;
   static const opacityCurve =
@@ -74,7 +74,7 @@ class RadialExpansionContent extends StatelessWidget {
 
   final String titleCard;
 
-  RadialExpansionContent({Key key, @required this.titleCard}) : super(key: key);
+  TypeRContent({Key key, @required this.titleCard}) : super(key: key);
 
   static RectTween _createRectTween(Rect begin, Rect end) {
     return MaterialRectCenterArcTween(begin: begin, end: end);

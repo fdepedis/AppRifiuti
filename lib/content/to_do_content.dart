@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class ToDoScreen extends StatelessWidget {
+class ToDoContent extends StatelessWidget {
   final String titleCard;
 
-  ToDoScreen({Key key, @required this.titleCard}) : super(key: key);
+  ToDoContent({Key key, @required this.titleCard}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
