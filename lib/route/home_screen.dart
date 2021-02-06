@@ -67,8 +67,9 @@ ListView _buildBody(BuildContext context) {
               subTitleCard: Strings.subTitleCardCalendar,
               typeCard: "R_CALENDAR",
               dimensionCard: cardDimension.LARGE.toShortString(),
-              colorCard: /*0xFF7C2289*/ /* Color(int.parse("FC4854", radix: 16) + 0xFF000000),*/
-                  Colors.red[300],
+              colorCard: /*0xFF7C2289*/ Color(
+                  int.parse("AA76C1", radix: 16) + 0xFF000000),
+              /*Colors.red[300],*/
               index: Utils.getIndexDetailScreen(
                   typeDimension.R_CALENDAR.toShortString()),
             ),
@@ -77,7 +78,8 @@ ListView _buildBody(BuildContext context) {
               subTitleCard: Strings.subTitleCardType,
               typeCard: "R_TYPE",
               dimensionCard: cardDimension.NORMAL.toShortString(),
-              colorCard: /*0xFFF48731*/ Colors.amber[800],
+              colorCard: /*0xFFF48731*/ /*Colors.amber[800],*/ Color(
+                  int.parse("EE997C", radix: 16) + 0xFF000000),
               index: Utils.getIndexDetailScreen(
                   typeDimension.R_TYPE.toShortString()),
             ),
@@ -86,7 +88,8 @@ ListView _buildBody(BuildContext context) {
               subTitleCard: Strings.subTitleCardCheck,
               typeCard: "R_CHECK",
               dimensionCard: cardDimension.SMALL.toShortString(),
-              colorCard: /*0xFFFFB849*/ Colors.orange[300],
+              colorCard: /*0xFFFFB849*/ /*Colors.orange[300],*/ Color(
+                  int.parse("F3CC71", radix: 16) + 0xFF000000),
               index: Utils.getIndexDetailScreen(
                   typeDimension.R_CHECK.toShortString()),
             ),
