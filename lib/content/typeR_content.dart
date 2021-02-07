@@ -109,14 +109,17 @@ class TypeRContent extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: AutoSizeText(
-                  description,
-                  maxLines: 100,
-                  style: TextStyle(fontSize: 24),
-                  minFontSize: 16,
-                  overflow: TextOverflow.ellipsis,
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: AutoSizeText(
+                    description,
+                    maxLines: 80,
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(fontSize: 24),
+                    minFontSize: 16,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
               ),
               /*const SizedBox(height: 16.0),*/
